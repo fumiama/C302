@@ -31,5 +31,5 @@ int main(int argc, char **argv) {
         {"\r\n\r\n", 4},
         {CONTENT, sizeof(CONTENT)-1}
     };
-    return  writev(1, (const struct iovec *)&iov, 5) != len+sizeof(uint32_t);
+    return writev(1, (const struct iovec *)&iov, 5) != len+sizeof(uint32_t);
 }
