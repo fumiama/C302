@@ -22,8 +22,8 @@ int main(int argc, char **argv) {
         return 1;
     }
     srand(time(NULL));
-    unsigned int i = rand() % (sizeof(urls)/sizeof(char*));
-    const struct iovec iov[3] = {{HTTP302HEAD, sizeof(HTTP302HEAD)}, {(void *)urls[i], urlsl[i]}, {"\r\n\r\n", 4}};
-    writev(1, (const struct iovec *)&iov, 3);
-    return 0;
+    uint32_t i = rand() % (sizeof(urls)/sizeof(char*));
+    uint32_t len = sizeof(HTTP302HEAD) - 1 + urlsl[i];
+    const struct iovec iov[3] = {{(void *)&len, sizeof(uint32_t)}, {HTTP302HEAD, sizeof(HTTP302HEAD)-1}, {(void *)urls[i], urlsl[i]}};
+    return  writev(1, (const struct iovec *)&iov, 3) != len+sizeof(uint32_t);
 }

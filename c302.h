@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 #define SERVER_STRING "Server: C302 by Fumiama/1.0\r\n"
-#define HTTP302 "HTTP/1.0 302 Moved Temporarily\r\n"
+#define HTTP302 "HTTP/1.1 302 Found\r\n"
 #define LOCATION "Location: "
 #define HTTP302HEAD HTTP302 SERVER_STRING LOCATION
 
