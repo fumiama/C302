@@ -5,8 +5,12 @@
 
 #define SERVER_STRING "Server: C302 by Fumiama/1.0\r\n"
 #define HTTP302 "HTTP/1.1 302 Found\r\n"
+#define CONTENT_TYPE "Content-Type: text/html; charset=utf-8\r\n"
+#define CONTENT_LENGTH "Content-Length: 11\r\n"
 #define LOCATION "Location: "
-#define HTTP302HEAD HTTP302 SERVER_STRING LOCATION
+#define HTTP302HEAD HTTP302 SERVER_STRING CONTENT_TYPE CONTENT_LENGTH LOCATION
+
+#define CONTENT "<P>Found.\r\n"
 
 #define HTTP200 "HTTP/1.0 200 OK\r\n"
 #define H400 "HTTP/1.0 400 BAD REQUEST\r\nContent-Type: text/html\r\n\r\n<P>%s\r\n"
