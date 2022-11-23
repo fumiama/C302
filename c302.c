@@ -1,10 +1,9 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/file.h>
 #include <sys/uio.h>
 #include <time.h>
-#include <unistd.h>
 #include "c302.h"
 
 static void http_error(ERRCODE code, char* msg) {

@@ -1,6 +1,8 @@
 #ifndef _C302_H_
 #define _C302_H_
 
+#include <stdint.h>
+
 #define SERVER_STRING "Server: C302 by Fumiama/1.0\r\n"
 #define HTTP302 "HTTP/1.0 302 Moved Temporarily\r\n"
 #define LOCATION "Location: "
@@ -11,7 +13,7 @@
 #define H404 "HTTP/1.0 404 NOT FOUND\r\nContent-Type: text/html\r\n\r\n<HTML><TITLE>Not Found</TITLE>\r\n<BODY><P>%s\r\n</BODY></HTML>\r\n"
 #define H500 "HTTP/1.0 500 Internal Server Error\r\nContent-Type: text/html\r\n\r\n<P>%s\r\n"
 const char* types[] = {H400, H404, H500};
-const unsigned char typel[] = {59, 111, 69};
+const uint8_t typel[] = {59, 111, 69};
 enum ERRCODE {HTTP400, HTTP404, HTTP500};
 typedef enum ERRCODE ERRCODE;
 
@@ -22,6 +24,6 @@ static const char* urls[] = {
     "https://bocchi.rocks/assets/img/page/character/ikuyo/main.png"     // 喜多郁代
 };
 
-static const unsigned short urlsl[] = {62, 62, 59, 61};
+static const uint16_t urlsl[] = {62, 62, 59, 61};
 
 #endif
