@@ -6,7 +6,7 @@
 #include <time.h>
 #include "c302.h"
 
-static void http_error(ERRCODE code, char* msg) {
+static void http_error(errcode_enum_t code, char* msg) {
     uint32_t len = strlen(msg) + typel[code];
     char* str = malloc(len);
     sprintf(str, types[code], msg);

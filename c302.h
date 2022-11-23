@@ -14,8 +14,8 @@
 #define H500 "HTTP/1.0 500 Internal Server Error\r\nContent-Type: text/html\r\n\r\n<P>%s\r\n"
 const char* types[] = {H400, H404, H500};
 const uint8_t typel[] = {59, 111, 69};
-enum ERRCODE {HTTP400, HTTP404, HTTP500};
-typedef enum ERRCODE ERRCODE;
+enum errcode_enum_t {HTTP400, HTTP404, HTTP500};
+typedef enum errcode_enum_t errcode_enum_t;
 
 static const char* urls[] = {
     "https://bocchi.rocks/assets/img/page/character/hitori/main.png",   // 後藤ひとり
