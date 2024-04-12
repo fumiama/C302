@@ -4,4 +4,4 @@
 ## demo
 > show a random characher on each refresh
 
-![bocchi](https://cmoe.azurewebsites.net/c302?)
+![bocchi](https://counter.seku.su/c302)
