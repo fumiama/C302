@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
         http_error(HTTP500, "Argument Count Error.");
         return 1;
     }
-    uint32_t i = time(NULL) % (sizeof(urls)/sizeof(char*));
+    int i = time(NULL) % (sizeof(urls)/sizeof(char*));
     uint32_t len = sizeof(HTTP302HEAD)-1 + urlsl[i] + 4 + sizeof(CONTENT)-1;
     const struct iovec iov[4] = {
         {(void *)&len, sizeof(uint32_t)},

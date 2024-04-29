@@ -25,9 +25,11 @@ static const char* urls[] = {
     "https://bocchi.rocks/assets/img/page/character/hitori/main.png",   // 後藤ひとり
     "https://bocchi.rocks/assets/img/page/character/nijika/main.png",   // 伊地知虹夏
     "https://bocchi.rocks/assets/img/page/character/ryo/main.png",      // 山田リョウ
-    "https://bocchi.rocks/assets/img/page/character/ikuyo/main.png"     // 喜多郁代
+    "https://bocchi.rocks/assets/img/page/character/ikuyo/main.png",    // 喜多郁代
+    "https://orthrossoft.jp/assets/images/character/whole_body-yui.png",    // 片桐ユイ
+    "https://orthrossoft.jp/assets/images/character/whole_body-yaeka.png"   // 片桐ヤエカ
 };
 
-static const uint16_t urlsl[] = {62, 62, 59, 61};
+static const uint16_t urlsl[] = {62, 62, 59, 61, 65, 67};
 
 #endif
