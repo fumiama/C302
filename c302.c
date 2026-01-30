@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/select.h>
 #include <sys/uio.h>
 #include <time.h>
 #include "c302.h"
@@ -30,4 +31,19 @@ int main(int argc, char **argv) {
         {"\r\n\r\n" CONTENT, 4+sizeof(CONTENT)-1}
     };
     return writev(1, (const struct iovec *)&iov, 4) != len+sizeof(uint32_t);
+}
+
+static void __attribute__((destructor)) defer_close_fp() {
+    fflush(stdout);
+    char buf[256];
+    fd_set rfds;
+    struct timeval tv;
+    int ret;
+    FD_ZERO(&rfds);
+    FD_SET(0, &rfds);
+    tv.tv_sec = 1;
+    tv.tv_usec = 0;
+    if (select(1, &rfds, NULL, NULL, &tv) > 0 && FD_ISSET(0, &rfds)) {
+        read(0, buf, sizeof(buf));
+    }
 }
