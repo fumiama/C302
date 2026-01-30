@@ -5,6 +5,7 @@
 #include <sys/select.h>
 #include <sys/uio.h>
 #include <time.h>
+#include <unistd.h>
 #include "c302.h"
 
 static void http_error(errcode_enum_t code, char* msg) {
